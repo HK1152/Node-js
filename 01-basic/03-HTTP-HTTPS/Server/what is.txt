@@ -1,0 +1,11 @@
+createServer(req, res)
+    ye ek function hai jo ek server create karta hai
+    ye function ek callback function leta hai jo do arguments leta hai req and res
+    req -> request
+    res -> response
+
+listen(port, callback)
+    ye ek function hai jo ek server ko ek specific port par listen karta hai
+  
+    port -> port number
+    

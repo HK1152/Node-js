@@ -1,0 +1,36 @@
+const fs = require("fs");
+        file ko call kiya
+
+fs.writeFileSync(file,data,callback)
+        file = file ka name "demo.txt"
+        data = us file me kya likhna hai "hareKrishna"
+        callback = function banane ke liye 
+
+fs.appendFileSync(file,data,callback)
+        data = us file me age likhne ke liye
+
+
+fs.unlinkSync(file,callback)
+        file ko delete karne ke liye   
+         1. sync = synchronous = ek ke baad ek kaam karega
+         2. async = asynchronous = ek saath kaam karega
+
+
+fs.rename(file,newfile,callback)
+        file = old file ka name "demo.txt"
+        newfile = new file ka name "hk.txt"
+
+
+fs.mkdir(path,options)
+        folder create karna
+
+fs.copyFile(file,copyfile,callback)
+        file = real file ka name "demo.txt"
+        copyfile = copy file ka name "./copy/hk.txt"
+        important = 
+        1. copy file ka path real file ke path se alag hona chahiye
+        2. dusre folder me copy karne ke liye us folder ko pehle banana padega ya pahle se hona chahiye
+
+fs.rm(path,options,callback)
+        path = file ka name "./copy"
+        options = { recursive: true } iska matalab hai ki agar folder me file hai to usko bhi delete karega

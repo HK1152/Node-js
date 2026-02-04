@@ -1,0 +1,27 @@
+Search : https://www.npmjs.com/
+
+
+
+install & uninstall
+    install : npm i <package-name>
+    uninstall : npm un <package-name>  || npm uninstall <package-name>
+
+version
+    version install : npm i <package-name>@<version> || npm install <package-name>@<version>
+    version check : npm v <package-name> || npm version <package-name>
+    version update : npm u <package-name> || npm update <package-name>
+    version remove : npm rm <package-name> || npm remove <package-name>
+    version list : npm ls <package-name> || npm list <package-name>
+    version list all : npm ls -a || npm list -a
+    version list depth : npm ls --depth <depth> || npm list --depth <depth>
+
+global version
+    version global : npm g <package-name> || npm global <package-name>
+    version global list : npm g ls <package-name> || npm global list <package-name>
+    version global update : npm g u <package-name> || npm global update <package-name>
+    version global remove : npm g rm <package-name> || npm global remove <package-name>
+    version global list all : npm g ls -a || npm global list -a
+    version global list depth : npm g ls --depth <depth> || npm global list --depth <depth>
+
+
+

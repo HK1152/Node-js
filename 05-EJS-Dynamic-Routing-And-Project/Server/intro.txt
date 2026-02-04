@@ -1,0 +1,91 @@
+==============================
+EJS - Embedded JavaScript
+==============================
+
+app.set('view engine','ejs');
+        1. view engine : ye hum is liye likhte hai taki hum ejs ko use kar sake 
+        2. ejs : ye ek template engine hai jo hume HTML me JS code likhne ki suvidha deta hai 
+        3. res.render("index") : ye hum is liye likhte hai taki hum ejs file ko render kar sake 
+        4. by default Express "views" folder me EJS files dhoondhta hai
+
+
+views/index.ejs
+        1. ye hum is liye banate hai taki hum ejs file ko render kar sake 
+        2. ise hum is structure me likhte hai 
+        3. <% %> : ye hum is liye likhte hai taki hum ejs file me JS code likh sake (output nahi hoga)
+        4. <%= %> : ye hum is liye likhte hai taki hum ejs file me JS code ko render kar sake (output screen par dikhega)
+        5. <%# %> : ye hum is liye likhte hai taki hum ejs file me comment likh sake 
+        6. <%- %> : ye unescaped HTML render karne ke liye use hota hai
+
+
+================================
+Static Files Setup
+================================
+
+app.use(express.static(path.join(__dirname,"public")));
+        1. ye hum is liye likhte hai taki hum static file (CSS, JS, images) ko use kar sake  
+        2. __dirname : ye likhne se hume current file ka path milta hai 
+        3. public : ye ek folder hai jisme hum static file ko rakhte hai 
+        4. path.join(__dirname,"public") : "__dirname" se pura path create hota hai, uske baad "public" add karke public folder ka complete path ban jata hai 
+        5. static files directly access kar sakte hai, example: /JavaScript/script.js
+
+
+================================
+Dynamic Routing
+================================
+
+1. Basic Dynamic Route:
+   app.get("/:kuchhBhi", ...)
+        - ye likhne se dynamic routing kar sakte hai
+        - ":kuchhBhi" ek parameter hai jo URL se value capture karta hai
+        - req.params.kuchhBhi se value access kar sakte hai
+        - Example: /user, /admin, /anything sab is route me match honge
+
+2. Dynamic Route with Additional Path:
+   app.get("/:kuchhBhi/age", ...)
+        - ye ek specific pattern match karta hai
+        - Example: /user/age, /admin/age
+        - req.params.kuchhBhi se pehla part milega
+
+3. IMPORTANT - Route Order:
+        - Specific routes ko pehle define karo
+        - Dynamic routes ko baad me define karo
+        - Example:
+          ✓ app.get("/user", ...) - pehle
+          ✓ app.get("/:kuchhBhi", ...) - baad me
+        - Kyunki dynamic route sab kuch match kar lega
+
+
+================================
+Important Points (Main Folder ke hisaab se)
+================================
+
+✅ EJS Points:
+   1. EJS templates HTML me JavaScript embed karne dete hai
+   2. Data ko server se view tak pass kar sakte hai
+   3. Loops, conditions, variables sab use kar sakte hai
+   4. res.render("view_name", {data}) se data pass karte hai
+
+✅ Dynamic Routing Points:
+   1. URL parameters se dynamic data capture kar sakte hai
+   2. req.params object me sab parameters milte hai
+   3. Multiple parameters bhi use kar sakte hai: "/:user/:id"
+   4. Route order bahut important hai - specific pehle, dynamic baad me
+   5. Query parameters alag hai: req.query se access hote hai
+
+✅ Project Structure:
+   1. views/ - EJS templates folder (default)
+   2. public/ - Static files (CSS, JS, images)
+   3. index.js - Main server file
+   4. Middleware: express.json(), express.urlencoded(), express.static()
+
+✅ Common Error:
+   - "Cannot set headers after they are sent" - ek route handler me sirf ek response bhej sakte hai
+   - Do res.send() ya res.render() nahi kar sakte ek hi route me
+
+✅ Best Practices:
+   1. Specific routes ko dynamic routes se pehle define karo
+   2. Error handling middleware add karo
+   3. 404 route sabse last me add karo
+   4. EJS me data pass karte waqt object use karo: {key: value}
+   5. Path.join() use karo hardcoded paths ke bajaye 

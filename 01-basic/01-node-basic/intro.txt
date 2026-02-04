@@ -1,0 +1,46 @@
+node js hai khoob saara c++ ka code jo ki liya gaya hai chrome browser ke v8 engine ke code se aur is c++ code jisko liya gaya usey wrap kar diya gaya js code se and ye hume allow krta hai ke hum js code likhein aur ye js code accept karega and c++ ke basis par aapko ek server environment bana kar dega, par sirf tab tak jab tak ye code chalaayega jab tak aapka node (v8 engine and js wrapper) chaalu hai
+
+
+
+
+npm init
+        // npm init ek command hai jo package.json file create karta hai
+
+npm install express
+        // express ek package hai jo server banaane ke liye use hota hai
+
+npm install express --save
+        // --save ek flag hai jo package ko package.json file mein add karta hai
+
+npm install express --save-dev
+        // --save-dev ek flag hai jo package ko package.json file mein add karta hai
+
+npm install express --global
+        // --global ek flag hai jo package ko global mein add karta hai
+
+npm install express --force
+        // --force ek flag hai jo package ko force mein install karta hai
+
+npm install express --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+
+npm install express --legacy-peer-deps --legacy-bundling
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+        // --legacy-bundling ek flag hai jo package ko legacy bundling mein install karta hai
+
+npm install express --legacy-peer-deps --legacy-bundling --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+
+npm install express --legacy-peer-deps --legacy-bundling --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+
+
+npm install express --legacy-peer-deps --legacy-bundling --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+
+npm install express --legacy-peer-deps --legacy-bundling --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai
+
+
+npm install express --legacy-peer-deps --legacy-bundling --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps --legacy-peer-deps
+        // --legacy-peer-deps ek flag hai jo package ko legacy peer deps mein install karta hai

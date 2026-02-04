@@ -1,0 +1,12 @@
+{
+  "name": "demo",
+  "version": "11.52.11",
+  "description": "file ka dekhna",
+  "license": "ISC",
+  "author": "hk",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  }
+}

@@ -1,0 +1,13 @@
+npm i express    
+            install express, isse express ke package ko install karega
+
+npm i nodemon -g
+            install nodemon, isse bar bar server ko restart nahi karna padega
+
+
+
+after
+
+nodemon .\script.js
+or 
+npx nodemon script.js

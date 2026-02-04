@@ -1,0 +1,42 @@
+fs :
+    fs ka matlab hai file system
+    
+
+
+fs.readdir(path[,options],callback)
+        1.readdir -> iska use folder ke andar kya kya hai usko read karne ke liye hota hai
+        2.path -> jaha se read karna hai us folder ka path
+        3.options -> iska use folder ke andar kya kya hai usko read karne ke liye hota hai
+        4.callback -> iska use folder ke andar kya kya hai usko read karne ke liye hota hai
+
+
+
+res.render("index", { files });
+        1.render -> iska use ejs file ko render karne ke liye hota hai
+        2.ejs -> iska use ejs file ko render karne ke liye hota hai
+        3.files -> iska use ejs file ko render karne ke liye hota hai
+
+
+app.post("/create", (req, res) => {})
+
+    1.post -> iska use form ke data ko read karne ke liye hota hai
+    2./create -> is path ka use ham create ke liye hota hai
+
+
+fs.writeFile(path,data[,options],callback)
+    1.writeFile -> iska use file create karne ke liye hota hai
+    2.path -> jaha se read karna hai us folder ka path
+    3.data -> iska use file create karne ke liye hota hai
+    4.options -> iska use file create karne ke liye hota hai
+    5.callback -> iska use file create karne ke liye hota hai
+
+
+index.ejs
+ isme sirf aek chiz yaad rkhni ki jab bhilogic likho <%  %> is me to ye aek hi line me start or end karna pade ga or dusare lineke liye dusara.
+
+ example :
+ <% a=0 %>
+ <% if (5> a) { %>
+    <h1>5 is greater than <%= a %></h1>
+ <% } %>
+   

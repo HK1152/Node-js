@@ -1,0 +1,60 @@
+const express = require("express");
+const app = express();
+        1. express ko import karega
+        2. app ko initialize karega
+
+app.use(callback)
+        1. app.use() : iska matlab hai ki yeh middleware ko use karega
+        2. middleware : iska matlab hai ki yeh ek function hai jo request ko process karta hai
+        3. callback : iska matlab hai ki yeh ek function hai jo request ko process karta hai
+        4. next : iska use tab karte hai jab bhi next middleware ko call karna ho ya next function ko 
+        5. error : iska use tab karte hai jab bhi error aaye
+        6. req : iska use tab karte hai jab bhi request ko process karna ho. ye frontend se request ko process karta hai
+        7. res : iska use tab karte hai jab bhi response ko send karna ho. ye backend se response ko send karta hai
+
+        8.use : iska use tab karte hai jab bhi middleware ko use karna ho
+
+
+
+app.get(route, callback)
+        1. app.get() : iska ye matalab hai ki yeh ek function hai jo request ko process karta hai
+        2. route : iska matlab hai ki yeh ek path hai jo request ko process karta hai
+        3. res.send() : iska matlab hai ki yeh ek function hai jo response ko send karta hai.or ye frontend pe response ko send karta hai
+        4.res.status() : iska matlab hai ki yeh ek function hai jo response ko send karta hai.or ye frontend pe response ko send karta hai
+        5.status(): yeaek functionhai jo error ka status code dena hai
+                5a. status code : iska matlab hai ki yeh ek function hai jo error ka status code dena hai
+                5b. status code list:
+                        1 : 200 - OK
+                        2 : 404 - Not Found
+                        3 : 500 - Internal Server Error
+                        4 : 400 - Bad Request
+                        5 : 401 - Unauthorized
+                        6 : 403 - Forbidden
+                        7 : 409 - Conflict
+                        8 : 418 - I'm a teapot
+                        9 : 422 - Unprocessable Entity
+                        10 : 429 - Too Many Requests
+                        11 : 502 - Bad Gateway
+                        12 : 503 - Service Unavailable
+                        13 : 504 - Gateway Timeout
+                        14 : 505 - HTTP Version Not Supported
+                        15 : 506 - Variant Also Negotiates
+                        16 : 507 - Insufficient Storage
+                        17 : 508 - Loop Detected
+                        18 : 510 - Not Extended
+                        19 : 511 - Network Authentication Required
+                        20 : 520 - Web Server Returns an Unknown Error
+                        21 : 521 - Web Server Is Down
+                        22 : 522 - Connection Timed Out
+                        23 : 523 - Origin Is Unreachable
+                        24 : 524 - A Timeout Occurred
+                        25 : 525 - SSL Handshake Failed
+                        26 : 526 - Invalid SSL Certificate
+                        27 : 527 - Railgun Error
+                        28 : 528 - Site Is Over Capacity
+                        29 : 529 - Site Is Down For Maintenance
+                        30 : 530 - Site Is Temporarily Overloaded
+                        31 : 598 - Network read timeout error
+                        32 : 599 - Network connect timeout error
+                         
+ 

@@ -1,0 +1,46 @@
+besc try
+    1. npm init
+    2. npm install
+    3. npm run
+    or
+    1. npm init
+    2. open : "package.json"
+    3. "scripts": s me test ke niche apk javascript file ka naam likdo like{"node script.js"}
+    4. npm run script
+    or
+    1. npm init
+    2. open : "package.json"
+    3. new script add kardo : "hk": "echo \"im hk\""
+    4. npm run hk
+
+
+try 1
+
+1.search "joke"
+2.click "one-liner-joke"
+3.install "npm i one-liner-joke"
+4.usage "const joke = require("one-liner-joke");"
+5. console.log(joke.getRandomJoke());
+6. run : "node .\Script.js"
+
+
+
+try 2
+
+1.search "figlet"
+2.click "figlet"
+3.install "npm i figlet"
+4.usage "const figlet = require("figlet");"
+5. console.log(figlet.textSync("Hello World"));
+6. run : "node .\Script.js"
+
+
+try 3
+2 server aek satha chalaa hai ye package
+
+ 1. search : concurrency
+ 2. click : concurrency
+ 3. install : npm i concurrency
+ 4. usage : const concurrency = require("concurrency");
+ 5. console.log(concurrency.getRandomJoke());
+ 6. run : "node .\Script.js"

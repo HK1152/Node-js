@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Manager</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-zinc-900 text-white font-sans p-10">
+    <div class="main max-w-4xl mx-auto">
+        <!-- Form Section -->
+        <div class="form bg-zinc-800 p-8 rounded-xl border border-zinc-700 shadow-lg mb-10">
+            <h2 class="text-2xl font-bold mb-6 text-zinc-100">Create New Task</h2>
+            <form action="/create" method="post" class="flex flex-col gap-4">
+                <input type="text" name="title" placeholder="Title..."
+                    class="bg-zinc-700 border border-zinc-600 rounded-md px-4 py-2 text-white outline-none focus:border-zinc-500">
+                <textarea name="description" placeholder="Description..." rows="3"
+                    class="bg-zinc-700 border border-zinc-600 rounded-md px-4 py-2 text-white outline-none focus:border-zinc-500 resize-none"></textarea>
+                <input type="submit" value="Create Task"
+                    class="bg-blue-600 hover:bg-blue-700 transition-colors text-white font-semibold py-2 rounded-md cursor-pointer">
+            </form>
+        </div>
+
+        <!-- Tasks Section -->
+
+        <div class="tasks flex flex-wrap gap-5">
+            <% if (files.length> 0) { %>
+                <% files.forEach(function(val){ %>
+                    <div
+                        class="task bg-zinc-800 p-5 rounded-lg border border-zinc-700 w-full sm:w-[48%] md:w-[31%] flex flex-col justify-between">
+                        <h1 class="text-xl font-bold text-zinc-100 truncate mb-3">
+                            <%= val %>
+                        </h1>
+                        <a href="/file/<%= val %>" class="text-blue-400 hover:text-blue-300 text-sm font-medium">Read
+                            More...</a>
+                    </div>
+                    <% }) %>
+                        <% } else { %>
+                            <h3 class="text-zinc-500 font-medium">No tasks found.</h3>
+                            <% } %>
+        </div>
+    </div>
+</body>
+
+</html>

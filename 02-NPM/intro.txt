@@ -1,0 +1,8 @@
+npm => node package manager
+    npm ek jagah hai jaha par khoob saare packages milte hai 
+    bani banaai cheejein/features kehlaate hai packages
+
+understanding node_modules
+    dependencies packages and packages ki dependencies
+    devdependencies aise packages jo sirf development mein kaam aayege par jab app ban jaayega aur upload ho jaayega tab hum in packages ko use nahi kar rahe honge
+
