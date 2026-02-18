@@ -1,0 +1,37 @@
+# Types of Servers: Application vs. Database
+
+Ek developer ke liye servers ki basic samajh hona bahut zaroori hai. Broadly, server do types ke hote hain:
+
+---
+
+## 1. Application Server (App Server)
+Application server wo hota hai jahan aapka code (logic) run karta hai. Ye Client (Frontend) aur Database ke beech ka bridge hota hai.
+
+**Important Points for Developers:**
+*   **Business Logic:** Aapka sara backend logic, calculations, aur rules App Server par likhe jate hain. (e.g., Node.js, Python/Django, Java/Spring Boot).
+*   **Middleware:** Request authentication, logging, aur data validation yahi par hota hai.
+*   **API Management:** App server APIs (REST, GraphQL) expose karta hai jinse frontend communicate karti hai.
+*   **Security:** Authorization (kisko kya access hai) handle karta hai taaki database directly expose na ho.
+*   **Scalability:** Agar traffic badhta hai, toh hum multiple App Servers run kar sakte hain (Horizontal Scaling).
+
+---
+
+## 2. Database Server (DB Server)
+Database server wo hota hai jahan data permanently store hota hai. Ise 'Data Tier' bhi kehte hain.
+
+**Important Points for Developers:**
+*   **Data Persistence:** App server restart ho jaye toh data udd nahi jata, wo DB server par safe rehta hai.
+*   **Data Management:** SQL (MySQL, PostgreSQL) ya NoSQL (MongoDB) databases ka use karke structured ya unstructured data store karta hai.
+*   **Query Optimization:** Developers ko queries (SELECT, INSERT, UPDATE) likhni hoti hain. DB server in queries ko efficiently execute karta hai.
+*   **Indexing:** Database performance fast karne ke liye Indexing use hoti hai.
+*   **ACID Properties:** Data ki integrity maintain karne ke liye DB servers ACID rules follow karte hain (Atomicity, Consistency, Isolation, Durability).
+*   **Backup & Security:** Database ki security aur regular backups bahut critical hote hain.
+
+---
+
+## Summary (Developer's View)
+*   **Frontend:** User Interface (React, EJS, HTML).
+*   **App Server:** Brain (Processing, Logic, Security).
+*   **DB Server:** Memory (Data storage, Retrieval).
+
+Jab aap `npm start` karte ho Node.js mein, toh aap ek **Application Server** shuru karte ho. Aur jab aap MongoDB ya MySQL connect karte ho, toh wo **Database Server** hota hai.
