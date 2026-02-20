@@ -1,0 +1,10 @@
+npm init -y
+
+npm i jsonwebtoken bcrypt express
+
+npm i cookie-parser
+
+
+
+psw : yeMeraPasswordHai
+code : $2b$10$CPmJ7msvmX4HbLO1kO6Mr.XYy8TDqqcalBH7xG/xdAXp02BP4t6Iyc

@@ -1,0 +1,5 @@
+npm init -y
+
+npm i express jsonwebtoken bcrypt cookie-parser ejs mongoose
+
+npx nodemon app.js
