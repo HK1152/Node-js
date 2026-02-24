@@ -1,19 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>create</title>
-     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nexus — Sign In</title>
+    <meta name="description" content="Sign in to your Nexus account." />
+    <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
-   <div class="w-full h-screen bg-zinc-900 flex items-center justify-center flex-col gap-4">
-    <h1 class="text-white text-2xl font-bold">Login</h1>
-    <form action="/login" method="post" class="bg-white p-6 rounded shadow-md w-96">
-        <input type="email" name="email" placeholder="Email" class="w-full mb-4 p-2 border border-gray-300 rounded">
-        <input type="password" name="password" placeholder="Password" class="w-full mb-4 p-2 border border-gray-300 rounded">
-        <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded hover:bg-blue-600">Login</button>
-    </form>
+
+    <!-- Animated Background -->
+    <div class="bg-animated">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
     </div>
+
+    <!-- Floating Particles -->
+    <div class="particles" id="particles"></div>
+
+    <!-- Page -->
+    <div class="page-wrapper">
+        <div class="glass-card form-card">
+
+            <!-- Brand -->
+            <div class="brand">
+                <div class="brand-icon">✦</div>
+                <h1>Welcome Back</h1>
+                <p>Sign in to continue to Nexus</p>
+            </div>
+
+            <!-- Login Form -->
+            <form action="/login" method="post" id="loginForm">
+
+                <div class="form-group">
+                    <label class="form-label">Email Address</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">✉</span>
+                        <input id="loginEmail" type="email" name="email" placeholder="you@example.com"
+                            class="form-input" required autocomplete="email" />
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label">Password</label>
+                    <div class="input-wrapper">
+                        <span class="input-icon">🔒</span>
+                        <input id="loginPassword" type="password" name="password" placeholder="Enter your password"
+                            class="form-input" required autocomplete="current-password" />
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary" id="loginBtn">
+                    <span class="btn-text">Sign In →</span>
+                </button>
+            </form>
+
+            <div class="divider">or</div>
+
+            <div class="auth-link">
+                Don't have an account? <a href="/">Create one free →</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Particle generator
+        const container = document.getElementById('particles');
+        for (let i = 0; i < 20; i++) {
+            const p = document.createElement('div');
+            p.classList.add('particle');
+            const size = Math.random() * 4 + 2;
+            p.style.cssText = `
+        width:${size}px; height:${size}px;
+        left:${Math.random() * 100}%;
+        animation-duration:${Math.random() * 15 + 10}s;
+        animation-delay:-${Math.random() * 20}s;
+        opacity:${Math.random() * 0.6 + 0.2};
+      `;
+            container.appendChild(p);
+        }
+
+        // Button loading state
+        document.getElementById('loginForm').addEventListener('submit', function () {
+            const btn = document.getElementById('loginBtn');
+            btn.querySelector('.btn-text').textContent = 'Signing in…';
+            btn.disabled = true;
+            btn.style.opacity = '0.7';
+        });
+    </script>
 </body>
+
 </html>
