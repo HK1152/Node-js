@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  </head>
+<body>
+    <div class="w-full h-screen flex items-center justify-center flex-col bg-gray-900 text-white">
+        <h1 class="text-2xl font-bold">upload</h1>
+        <form class="mt-4 flex flex-col " action="/upload" method="post" enctype="multipart/form-data">
+            <input class="border border-white rounded p-2 mb-2 " type="file" name="image">
+             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" type="submit">submit</button>
+        </form>
+    </div>
+</body>
+</html>

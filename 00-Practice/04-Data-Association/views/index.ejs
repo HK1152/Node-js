@@ -1,154 +1,296 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nexus — Create Account</title>
-  <meta name="description" content="Join Nexus — a premium social platform. Create your account today." />
+  <title>Nexus — Modern Social Platform</title>
+  <meta name="description"
+    content="Nexus is a next-generation social platform that helps you connect, create, and share — beautifully." />
   <link rel="stylesheet" href="/style.css" />
 </head>
+
 <body>
 
-  <!-- Animated Background -->
-  <div class="bg-animated">
-    <div class="orb orb-1"></div>
-    <div class="orb orb-2"></div>
-    <div class="orb orb-3"></div>
+  <!-- Animated Scene -->
+  <div class="bg-scene">
+    <div class="bg-orb bg-orb--1"></div>
+    <div class="bg-orb bg-orb--2"></div>
+    <div class="bg-orb bg-orb--3"></div>
   </div>
+  <div class="bg-particles" id="particles"></div>
 
-  <!-- Floating Particles -->
-  <div class="particles" id="particles"></div>
+  <!-- ═══════ TRANSPARENT NAVBAR ═══════ -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="/" class="nav-brand">
+        <div class="nav-logo">N</div>
+        Nexus
+      </a>
 
-  <!-- Page -->
-  <div class="page-wrapper">
-    <div class="glass-card form-card">
+      <ul class="nav-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#cta">Get Started</a></li>
+        <li><a href="/login">Sign In</a></li>
+      </ul>
 
-      <!-- Brand -->
-      <div class="brand">
-        <div class="brand-icon">✦</div>
-        <h1>Create Account</h1>
-        <p>Join Nexus and share your thoughts</p>
-      </div>
-
-      <!-- Register Form -->
-      <form action="/register" method="post" id="registerForm">
-
-        <div class="form-group">
-          <label class="form-label">Full Name</label>
-          <div class="input-wrapper">
-            <span class="input-icon">👤</span>
-            <input
-              id="name"
-              type="text"
-              name="name"
-              placeholder="Your full name"
-              class="form-input"
-              required
-              autocomplete="name"
-            />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Username</label>
-          <div class="input-wrapper">
-            <span class="input-icon">@</span>
-            <input
-              id="username"
-              type="text"
-              name="username"
-              placeholder="Choose a username"
-              class="form-input"
-              required
-              autocomplete="username"
-            />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Age</label>
-          <div class="input-wrapper">
-            <span class="input-icon">🎂</span>
-            <input
-              id="age"
-              type="number"
-              name="age"
-              placeholder="Your age"
-              class="form-input"
-              min="13"
-              max="120"
-              required
-            />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <div class="input-wrapper">
-            <span class="input-icon">✉</span>
-            <input
-              id="email"
-              type="email"
-              name="email"
-              placeholder="you@example.com"
-              class="form-input"
-              required
-              autocomplete="email"
-            />
-          </div>
-        </div>
-
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <div class="input-wrapper">
-            <span class="input-icon">🔒</span>
-            <input
-              id="password"
-              type="password"
-              name="password"
-              placeholder="Create a strong password"
-              class="form-input"
-              required
-              autocomplete="new-password"
-            />
-          </div>
-        </div>
-
-        <button type="submit" class="btn btn-primary" id="registerBtn">
-          <span class="btn-text">Create Account ✦</span>
-        </button>
-      </form>
-
-      <div class="auth-link">
-        Already have an account? <a href="/login">Sign in →</a>
+      <div class="nav-actions">
+        <a href="/login" class="btn btn-outline" style="padding:0.55rem 1.2rem; font-size:0.85rem;">Sign In</a>
+        <a href="#register" class="btn btn-primary" style="padding:0.55rem 1.2rem; font-size:0.85rem;">Sign Up Free</a>
       </div>
     </div>
-  </div>
+  </nav>
+
+  <!-- ═══════ HERO SECTION — Gradient ═══════ -->
+  <section class="hero z-content">
+    <div class="container">
+      <div class="hero-grid">
+
+        <!-- Left — Copy -->
+        <div class="hero-content">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Now in public beta
+          </div>
+
+          <h1 class="hero-title">
+            Build. Share.<br />
+            <span class="accent">Connect.</span>
+          </h1>
+
+          <p class="hero-subtitle">
+            Nexus is a next-generation social platform designed for creators. Share your thoughts, connect with your
+            community, and grow — all in one beautiful space.
+          </p>
+
+          <div class="hero-cta-group">
+            <a href="#register" class="btn btn-primary" style="padding:1rem 2rem; font-size:1rem;">
+              Create Free Account →
+            </a>
+            <a href="#features" class="btn btn-outline" style="padding:1rem 2rem; font-size:1rem;">
+              Explore Features
+            </a>
+          </div>
+        </div>
+
+        <!-- Right — Visual Mockup -->
+        <div class="hero-visual">
+          <div class="hero-mockup">
+            <div class="mockup-dots">
+              <div class="mockup-dot mockup-dot--r"></div>
+              <div class="mockup-dot mockup-dot--y"></div>
+              <div class="mockup-dot mockup-dot--g"></div>
+            </div>
+            <div class="mockup-line mockup-line--1"></div>
+            <div class="mockup-line mockup-line--2"></div>
+            <div class="mockup-line mockup-line--3"></div>
+            <div class="mockup-line mockup-line--4"></div>
+            <div class="mockup-line mockup-line--5"></div>
+            <div class="mockup-stats">
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">2.4K</div>
+                <div class="mockup-stat-label">Users</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">18K</div>
+                <div class="mockup-stat-label">Posts</div>
+              </div>
+              <div class="mockup-stat">
+                <div class="mockup-stat-num">99%</div>
+                <div class="mockup-stat-label">Uptime</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Floating badges -->
+          <div class="hero-float-badge hero-float-badge--1">
+            <span style="color:var(--accent); font-weight:700;">✦</span>&nbsp; Real-time updates
+          </div>
+          <div class="hero-float-badge hero-float-badge--2">
+            <span style="color:var(--success); font-weight:700;">●</span>&nbsp; 500+ active now
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ FEATURES SECTION — 3 Cards ═══════ -->
+  <section class="features-section section-pad z-content" id="features">
+    <div class="container">
+      <div class="section-header reveal">
+        <div class="section-tag">✦ Features</div>
+        <h2 class="section-title">Everything you need,<br /><span class="gradient-text">nothing you don't.</span></h2>
+        <p class="section-desc">A clean, focused experience for creators who value simplicity and power in equal
+          measure.</p>
+      </div>
+
+      <div class="features-grid">
+        <!-- Card 1 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon">⚡</div>
+          <h3 class="feature-title">Lightning-Fast Posting</h3>
+          <p class="feature-desc">Create and publish posts instantly. Our optimized pipeline ensures your thoughts go
+            live in under 200ms — with zero friction.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon">🔐</div>
+          <h3 class="feature-title">Secure by Default</h3>
+          <p class="feature-desc">Enterprise-grade encryption with JWT authentication and bcrypt hashing keeps your
+            account and data completely safe.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="feature-card reveal">
+          <div class="feature-icon">💬</div>
+          <h3 class="feature-title">Community Interactions</h3>
+          <p class="feature-desc">Like, edit, and manage your content effortlessly. Engage with your community through
+            simple, meaningful interactions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ CTA SECTION ═══════ -->
+  <section class="cta-section section-pad z-content" id="cta">
+    <div class="container">
+      <div class="cta-card reveal">
+        <h2 class="cta-title">Ready to join <span class="gradient-text">Nexus</span>?</h2>
+        <p class="cta-desc">Create your free account in 30 seconds. No credit card required. Start sharing your voice
+          today.</p>
+        <div class="cta-buttons">
+          <a href="#register" class="btn btn-primary" style="padding:1rem 2.5rem; font-size:1rem;">Get Started Free
+            →</a>
+          <a href="/login" class="btn btn-outline" style="padding:1rem 2.5rem; font-size:1rem;">I have an account</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ REGISTER FORM SECTION ═══════ -->
+  <section class="section-pad z-content" id="register" style="background: var(--bg-dark);">
+    <div class="container" style="display:flex; justify-content:center;">
+      <div class="auth-card">
+        <div class="auth-brand">
+          <div class="auth-brand-icon">N</div>
+          <h1>Create Account</h1>
+          <p>Join thousands of creators on Nexus</p>
+        </div>
+
+        <form action="/register" method="post" id="registerForm">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <div class="input-wrap">
+              <span class="input-icon">👤</span>
+              <input id="name" type="text" name="name" placeholder="Your full name" class="form-input" required
+                autocomplete="name" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Username</label>
+            <div class="input-wrap">
+              <span class="input-icon">@</span>
+              <input id="username" type="text" name="username" placeholder="Choose a username" class="form-input"
+                required autocomplete="username" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Age</label>
+            <div class="input-wrap">
+              <span class="input-icon">🎂</span>
+              <input id="age" type="number" name="age" placeholder="Your age" class="form-input" min="13" max="120"
+                required />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <div class="input-wrap">
+              <span class="input-icon">✉</span>
+              <input id="email" type="email" name="email" placeholder="you@example.com" class="form-input" required
+                autocomplete="email" />
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-wrap">
+              <span class="input-icon">🔒</span>
+              <input id="password" type="password" name="password" placeholder="Create a strong password"
+                class="form-input" required autocomplete="new-password" />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full" id="registerBtn">
+            <span class="btn-text">Create Account →</span>
+          </button>
+        </form>
+
+        <div class="auth-footer">
+          Already have an account? <a href="/login">Sign in here</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════ MINIMAL FOOTER ═══════ -->
+  <footer class="footer z-content">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="nav-logo" style="width:30px; height:30px; font-size:0.8rem;">N</div>
+          <span>Nexus</span>
+        </div>
+
+        <ul class="footer-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#register">Register</a></li>
+          <li><a href="/login">Sign In</a></li>
+        </ul>
+
+        <div class="footer-copy">© 2026 Nexus. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
 
   <script>
-    // Particle generator
-    const container = document.getElementById('particles');
-    for (let i = 0; i < 20; i++) {
-      const p = document.createElement('div');
-      p.classList.add('particle');
-      const size = Math.random() * 4 + 2;
-      p.style.cssText = `
-        width:${size}px; height:${size}px;
-        left:${Math.random() * 100}%;
-        animation-duration:${Math.random() * 15 + 10}s;
-        animation-delay:-${Math.random() * 20}s;
-        opacity:${Math.random() * 0.6 + 0.2};
-      `;
-      container.appendChild(p);
+    /* ── Particles ── */
+    const pc = document.getElementById('particles');
+    for (let i = 0; i < 18; i++) {
+      const d = document.createElement('div');
+      d.classList.add('dot');
+      const s = Math.random() * 3.5 + 1.5;
+      d.style.cssText = `width:${s}px;height:${s}px;left:${Math.random() * 100}%;animation-duration:${Math.random() * 18 + 12}s;animation-delay:-${Math.random() * 25}s;opacity:${Math.random() * 0.55 + 0.15};`;
+      pc.appendChild(d);
     }
 
-    // Button loading state
-    document.getElementById('registerForm').addEventListener('submit', function() {
-      const btn = document.getElementById('registerBtn');
-      btn.querySelector('.btn-text').textContent = 'Creating…';
-      btn.disabled = true;
-      btn.style.opacity = '0.7';
+    /* ── Navbar scroll ── */
+    const nav = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 60);
     });
+
+    /* ── Reveal on scroll ── */
+    const revealEls = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, { threshold: 0.15 });
+    revealEls.forEach(el => io.observe(el));
+
+    /* ── Register loading ── */
+    const rf = document.getElementById('registerForm');
+    if (rf) {
+      rf.addEventListener('submit', () => {
+        const b = document.getElementById('registerBtn');
+        b.querySelector('.btn-text').textContent = 'Creating…';
+        b.disabled = true;
+        b.style.opacity = '0.7';
+      });
+    }
   </script>
 </body>
+
 </html>

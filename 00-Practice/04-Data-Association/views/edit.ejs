@@ -2,29 +2,115 @@
 <html lang="en">
 
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Profile</title>
-   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+   <meta charset="UTF-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Nexus — Edit Post</title>
+   <meta name="description" content="Edit your Nexus post." />
+   <link rel="stylesheet" href="/style.css" />
 </head>
 
 <body>
-   <div class="w-full min-h-screen bg-zinc-900 text-white p-6">
 
-      <div class="flex items-center justify-start gap-4 mb-7">
-         <a href="/logout" class="bg-red-500 rounded-md px-3 py-2">logout</a>
+   <!-- Background -->
+   <div class="bg-scene">
+      <div class="bg-orb bg-orb--1"></div>
+      <div class="bg-orb bg-orb--2"></div>
+      <div class="bg-orb bg-orb--3"></div>
+   </div>
+   <div class="bg-particles" id="particles"></div>
+
+   <!-- Page -->
+   <div class="profile-page">
+
+      <!-- Top Bar -->
+      <div class="top-bar">
+         <div class="top-bar-brand">
+            <div class="top-bar-logo">N</div>
+            Nexus
+         </div>
+         <div class="top-bar-actions">
+            <a href="/profile" class="btn btn-ghost">← Back</a>
+            <a href="/logout" class="btn btn-danger">⏻ Logout</a>
+         </div>
       </div>
-      <h5>Edit your post</h5>
-      <form action="/update/<%= post._id %>" method="post" class="w-full max-w-md flex flex-col gap-2">
-         <textarea name="content" id="" cols="10" rows="5" placeholder="What's on your mind?"
-            class="w-full p-2 rounded-md bg-zinc-800 text-white mt-2 outline-"><%= post.content %></textarea>
-         <input type="hidden" name="id" value="<%= post._id %>">
-         <button class="bg-yellow-500 text-black px-4 py-2 rounded-md mt-2">Update Post</button>
-      </form>
-    
 
+      <!-- Edit Card -->
+      <div style="display:flex; justify-content:center; padding-top:1.5rem;">
+         <div class="edit-card">
+
+            <div class="edit-head">
+               <div class="edit-icon">✎</div>
+               <div>
+                  <h2 class="gradient-text"
+                     style="font-family:'Space Grotesk',sans-serif; font-size:1.35rem; font-weight:700;">Edit Post</h2>
+                  <p style="font-size:0.82rem; color:var(--text-muted); margin-top:0.15rem;">Make changes to your
+                     thought</p>
+               </div>
+            </div>
+
+            <!-- Current Content Preview -->
+            <div class="current-preview">
+               <div class="current-preview-label">📋 Current Content</div>
+               <p style="color:var(--text-light); line-height:1.65; font-size:0.88rem;">
+                  <%= post.content %>
+               </p>
+            </div>
+
+            <!-- Edit Form -->
+            <form action="/update/<%= post._id %>" method="post" id="editForm">
+               <div class="form-group">
+                  <label class="form-label">✍ Updated Content</label>
+                  <textarea id="editContent" name="content" class="form-textarea" rows="6"
+                     placeholder="Update your post…" required><%= post.content %></textarea>
+               </div>
+
+               <div style="display:flex; gap:1rem; margin-top:1rem;">
+                  <button type="submit" class="btn btn-primary btn-full" id="updateBtn" style="flex:1;">
+                     <span class="btn-text">💾 Save Changes</span>
+                  </button>
+                  <a href="/profile" class="btn btn-ghost" style="flex:0 0 auto; display:flex; align-items:center;">
+                     Cancel
+                  </a>
+               </div>
+            </form>
+
+            <!-- Like info -->
+            <div
+               style="margin-top:1.5rem; padding-top:1.25rem; border-top:1px solid var(--border); display:flex; align-items:center; gap:0.5rem;">
+               <span style="font-size:0.78rem; color:var(--text-muted);">❤ This post has</span>
+               <span style="font-size:0.78rem; color:var(--accent); font-weight:600;">
+                  <%= post.likes.length %> likes
+               </span>
+            </div>
+
+         </div>
       </div>
 
+   </div>
+
+   <script>
+      const pc = document.getElementById('particles');
+      for (let i = 0; i < 14; i++) {
+         const d = document.createElement('div');
+         d.classList.add('dot');
+         const s = Math.random() * 3 + 1.5;
+         d.style.cssText = `width:${s}px;height:${s}px;left:${Math.random() * 100}%;animation-duration:${Math.random() * 20 + 12}s;animation-delay:-${Math.random() * 25}s;opacity:${Math.random() * 0.4 + 0.1};`;
+         pc.appendChild(d);
+      }
+
+      const ta = document.getElementById('editContent');
+      ta.addEventListener('input', () => {
+         ta.style.height = 'auto';
+         ta.style.height = ta.scrollHeight + 'px';
+      });
+
+      document.getElementById('editForm').addEventListener('submit', function () {
+         const b = document.getElementById('updateBtn');
+         b.querySelector('.btn-text').textContent = '💾 Saving…';
+         b.disabled = true;
+         b.style.opacity = '0.7';
+      });
+   </script>
 </body>
 
 </html>

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login - HK</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style type="text/tailwindcss">
+        @theme {
+            --color-primary: #2b7fff;
+            --color-primary-hover: #1a66e6;
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50 text-gray-900 font-sans antialiased min-h-screen flex flex-col">
+    <%- include('./partials/header') %>
+
+        <main class="flex-grow flex items-center justify-center p-6 lg:p-12">
+            <% let showLogin=(typeof error !=='undefined' && error && error.length> 0) || (typeof success !==
+                'undefined' && success && success.length > 0); %>
+                <div class="w-full max-w-md z-10 relative">
+                    <!-- Registration Form -->
+                    <div id="register-form-container"
+                        class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 relative p-8 sm:p-10 <%= showLogin ? 'hidden' : 'block' %>">
+                        <div class="mb-4 text-center">
+                            <div
+                                class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-user-add-fill text-2xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold tracking-tight mb-2">Create Admin</h2>
+                            <p class="text-gray-500 text-sm">Register a new administrative owner.</p>
+                        </div>
+
+                        <% if (typeof success !=='undefined' && success && success.length> 0) { %>
+                            <div
+                                class="mb-6 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-sm text-center">
+                                <%= success %>
+                            </div>
+                            <% } %>
+                                <% if (typeof error !=='undefined' && error && error.length> 0) { %>
+                                    <div
+                                        class="mb-6 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm text-center">
+                                        <%= error %>
+                                    </div>
+                                    <% } %>
+
+                                        <form action="/owners/create" method="post" class="space-y-5">
+                                            <div>
+                                                <label for="fullname"
+                                                    class="block text-sm font-medium text-gray-700 mb-1">Full
+                                                    Name</label>
+                                                <input
+                                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 outline-none"
+                                                    type="text" placeholder="John Doe" name="fullname" required>
+                                            </div>
+                                            <div>
+                                                <label for="email"
+                                                    class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                                <input
+                                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 outline-none"
+                                                    type="email" placeholder="admin@hk.com" name="email" required>
+                                            </div>
+                                            <div>
+                                                <label for="password"
+                                                    class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                                <input
+                                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 outline-none"
+                                                    type="password" placeholder="••••••••" name="password" required>
+                                            </div>
+                                            <button
+                                                class="w-full py-3.5 mt-4 bg-primary hover:bg-primary-hover text-white font-semibold rounded-xl shadow-md transition-all duration-200 transform hover:-translate-y-0.5"
+                                                type="submit">
+                                                Register Admin
+                                            </button>
+                                        </form>
+
+                                        <p class="mt-8 text-center text-sm text-gray-500">
+                                            Already have an account?
+                                            <button type="button" onclick="toggleForms()"
+                                                class="text-primary hover:text-primary-hover font-semibold transition-colors">Login
+                                                Admin</button>
+                                        </p>
+                    </div>
+
+                    <!-- Login Form -->
+                    <div id="login-form-container"
+                        class="bg-white rounded-2xl shadow-xl overflow-hidden border border-gray-100 relative p-8 sm:p-10 <%= showLogin ? 'block' : 'hidden' %>">
+                        <div class="mb-4 text-center">
+                            <div
+                                class="w-16 h-16 bg-primary/10 text-primary rounded-full flex items-center justify-center mx-auto mb-4">
+                                <i class="ri-shield-user-fill text-2xl"></i>
+                            </div>
+                            <h2 class="text-3xl font-bold tracking-tight mb-2">Admin Portal</h2>
+                            <p class="text-gray-500 text-sm">Secure access for administrative owners only.</p>
+                        </div>
+
+                        <% if (typeof success !=='undefined' && success && success.length> 0) { %>
+                            <div
+                                class="mb-6 px-4 py-3 rounded-lg bg-green-50 border border-green-200 text-green-600 text-sm text-center">
+                                <%= success %>
+                            </div>
+                            <% } %>
+                                <% if (typeof error !=='undefined' && error && error.length> 0) { %>
+                                    <div
+                                        class="mb-6 px-4 py-3 rounded-lg bg-red-50 border border-red-200 text-red-600 text-sm text-center">
+                                        <%= error %>
+                                    </div>
+                                    <% } %>
+
+                                        <form action="/owners/login" method="post" class="space-y-5">
+                                            <div>
+                                                <label for="email"
+                                                    class="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                                                <input
+                                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 outline-none"
+                                                    type="email" placeholder="admin@hk.com" name="email" required>
+                                            </div>
+                                            <div>
+                                                <label for="password"
+                                                    class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                                                <input
+                                                    class="w-full px-4 py-3 bg-gray-50 border border-gray-200 rounded-xl focus:ring-2 focus:ring-primary focus:border-primary transition-all duration-200 outline-none"
+                                                    type="password" placeholder="••••••••" name="password" required>
+                                            </div>
+                                            <button
+                                                class="w-full py-3.5 mt-4 bg-gray-900 hover:bg-black text-white font-semibold rounded-xl shadow-md transition-all duration-200 transform hover:-translate-y-0.5"
+                                                type="submit">
+                                                Login to Dashboard
+                                            </button>
+                                        </form>
+
+                                        <p class="mt-8 text-center text-sm text-gray-500">
+                                            Don't have an account?
+                                            <button type="button" onclick="toggleForms()"
+                                                class="text-primary hover:text-primary-hover font-semibold transition-colors">Create
+                                                Admin</button>
+                                        </p>
+                                        <p class="mt-4 text-center text-xs text-gray-400">
+                                            <i class="ri-lock-2-line"></i> This area is strictly protected.
+                                        </p>
+                    </div>
+                </div>
+        </main>
+
+        <script>
+            function toggleForms() {
+                const registerForm = document.getElementById('register-form-container');
+                const loginForm = document.getElementById('login-form-container');
+
+                if (registerForm.classList.contains('hidden')) {
+                    registerForm.classList.remove('hidden');
+                    registerForm.classList.add('block');
+                    loginForm.classList.remove('block');
+                    loginForm.classList.add('hidden');
+                } else {
+                    registerForm.classList.remove('block');
+                    registerForm.classList.add('hidden');
+                    loginForm.classList.remove('hidden');
+                    loginForm.classList.add('block');
+                }
+            }
+        </script>
+
+        <%- include('./partials/footer') %>
+</body>
+
+</html>
