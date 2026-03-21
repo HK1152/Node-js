@@ -1,0 +1,43 @@
+Student Management System
+(CRUD + Validation)
+Purpose:
+This project helps students understand how to build a backend system using Node.js and Express. It includes CRUD operations (Create, Read, Update, Delete) with proper validation and error handling.
+Scope & Features:
+·         Core Features:
+·         Create Student (POST API)
+·         Get All Students (GET API)
+·         Get Single Student by ID (GET API)
+·         Update Student (PUT API)
+·         Delete Student (DELETE API)
+
+
+Validation:
+·         Name: Minimum 3 characters
+·         Email: Valid format required
+·         Age: Must be number (18-60)
+Requirements:
+Node.js and Express.js
+Postman for API testing
+Basic knowledge of REST APIs
+API Endpoints:
+POST /students → Add new student
+GET /students → Get all students
+GET /students/:id → Get student by ID
+PUT /students/:id → Update student
+DELETE /students/:id → Delete student
+
+Data Structure:
+{ id, name, email, age }
+Validation Cases:
+Empty fields should not be allowed
+Invalid email format should be rejected
+Age should be within valid range
+ID must exist for update/delete
+Project Flow:
+1. User sends API request
+2. Server validates input
+3. Perform CRUD operation
+4. Send response with status code
+
+
+    
