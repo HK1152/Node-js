@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCU Movie Database</title>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --marvel-red: #E23636;
+            --marvel-dark: #202020;
+            --marvel-light: #fefefe;
+            --marvel-gold: #F4C531;
+            --marvel-blue: #00e5ff;
+        }
+        body { 
+            font-family: 'Roboto', sans-serif; 
+            margin: 0; 
+            padding: 0;
+            background-color: #111; 
+            color: var(--marvel-light);
+            background-image: radial-gradient(circle at 50% 0%, #2a2a2a 0%, #111 60%);
+            min-height: 100vh;
+        }
+        header {
+            background-color: var(--marvel-red);
+            padding: 20px 0;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(226, 54, 54, 0.4);
+            border-bottom: 3px solid var(--marvel-gold);
+        }
+        h1 { 
+            font-family: 'Bebas Neue', cursive; 
+            letter-spacing: 3px;
+            font-size: 3rem;
+            margin: 0;
+            color: white;
+            text-transform: uppercase;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .header-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .header-actions h2 {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 2rem;
+            color: var(--marvel-gold);
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .add-new a { 
+            display: inline-block;
+            background: transparent; 
+            color: var(--marvel-gold); 
+            padding: 12px 24px; 
+            text-decoration: none; 
+            border: 2px solid var(--marvel-gold);
+            border-radius: 4px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+        .add-new a:hover {
+            background: var(--marvel-gold);
+            color: #111;
+            box-shadow: 0 0 15px rgba(244, 197, 49, 0.5);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .poster-card { 
+            background: var(--marvel-dark);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid #333;
+            display: flex;
+            flex-direction: column;
+        }
+        .poster-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(226, 54, 54, 0.3);
+            border-color: var(--marvel-red);
+        }
+        .poster-image-container {
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+        }
+        .poster-image-container::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 100px;
+            background: linear-gradient(to top, var(--marvel-dark), rgba(32,32,32,0));
+        }
+        img { 
+            width: 100%; 
+            height: 100%; 
+            object-fit: cover; 
+            transition: transform 0.5s ease;
+        }
+        .poster-card:hover img {
+            transform: scale(1.05);
+        }
+        .poster-content {
+            padding: 20px;
+            position: relative;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        .poster-card h3 { 
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.8rem;
+            margin: 0 0 10px 0;
+            color: var(--marvel-light);
+            letter-spacing: 1px;
+        }
+        .poster-card p {
+            margin: 5px 0;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        .poster-card strong {
+            color: var(--marvel-red);
+        }
+        .badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: var(--marvel-red);
+            color: white;
+            padding: 5px 10px;
+            font-family: 'Bebas Neue', cursive;
+            font-size: 1.2rem;
+            border-radius: 4px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            z-index: 10;
+        }
+        .actions {
+            display: flex;
+            gap: 10px;
+            margin-top: auto;
+            padding-top: 15px;
+        }
+        .btn-edit, .btn-delete {
+            padding: 8px 15px;
+            border-radius: 4px;
+            font-family: 'Bebas Neue', cursive;
+            text-transform: uppercase;
+            font-size: 1.2rem;
+            cursor: pointer;
+            text-decoration: none;
+            border: none;
+            text-align: center;
+            flex: 1;
+            transition: opacity 0.3s, transform 0.1s;
+        }
+        .btn-edit:hover, .btn-delete:hover {
+            opacity: 0.8;
+        }
+        .btn-edit:active, .btn-delete:active {
+            transform: scale(0.95);
+        }
+        .btn-edit {
+            background: var(--marvel-blue);
+            color: #000;
+        }
+        .btn-delete {
+            background: var(--marvel-red);
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>MARVEL CINEMATIC DATABASE</h1>
+    </header>
+
+    <div class="container">
+        <div class="header-actions">
+            <h2>DATABASE ARCHIVES</h2>
+            <div class="add-new">
+                <a href="/create">INITIALIZE NEW ENTRY</a>
+            </div>
+        </div>
+
+        <div class="grid">
+            <% posters.forEach(poster => { %>
+                <div class="poster-card">
+                    <div class="poster-image-container">
+                        <div class="badge"><%= poster.releaseYear %></div>
+                        <% 
+                            let imgPath = poster.posterImage || '';
+                            if (imgPath && !imgPath.startsWith('http') && !imgPath.startsWith('/')) {
+                                if (imgPath.startsWith('uploads')) {
+                                    imgPath = '/' + imgPath.replace(/\\/g, '/');
+                                } else {
+                                    imgPath = '/uploads/' + imgPath;
+                                }
+                            }
+                        %>
+                        <img src="<%= imgPath %>" alt="<%= poster.title %>">
+                    </div>
+                    <div class="poster-content">
+                        <h3><%= poster.title %></h3>
+                        <p><strong>DIRECTOR:</strong> <%= poster.director %></p>
+                        <p><strong>GENRE:</strong> <%= poster.genre %></p>
+                        <div class="actions">
+                            <a href="/edit/<%= poster._id %>" class="btn-edit">EDIT</a>
+                            <form action="/delete/<%= poster._id %>" method="POST" style="display: flex; flex: 1;">
+                                <button type="submit" class="btn-delete" style="flex: 1;">DELETE</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+            <% if(posters.length === 0) { %>
+                <p style="text-align: center; grid-column: 1 / -1; color: #888; font-style: italic;">No records found in the archive. Initialize a new entry.</p>
+            <% } %>
+        </div>
+    </div>
+</body>
+</html>

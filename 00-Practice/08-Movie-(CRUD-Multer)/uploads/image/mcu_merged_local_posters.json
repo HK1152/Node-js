@@ -1,0 +1,275 @@
+[
+  {
+    "title": "Iron Man",
+    "director": "Jon Favreau",
+    "releaseYear": 2008,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Iron Man.jpg"
+  },
+  {
+    "title": "The Incredible Hulk",
+    "director": "Louis Leterrier",
+    "releaseYear": 2008,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "The Incredible Hulk.jpg"
+  },
+  {
+    "title": "Iron Man 2",
+    "director": "Jon Favreau",
+    "releaseYear": 2010,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Iron Man 2.jpg"
+  },
+  {
+    "title": "Thor",
+    "director": "Kenneth Branagh",
+    "releaseYear": 2011,
+    "genre": "Action/Fantasy",
+    "posterImage": "Thor.jpg"
+  },
+  {
+    "title": "Captain America: The First Avenger",
+    "director": "Joe Johnston",
+    "releaseYear": 2011,
+    "genre": "Action/Adventure",
+    "posterImage": "Captain America The First Avenger.jpg"
+  },
+  {
+    "title": "The Avengers",
+    "director": "Joss Whedon",
+    "releaseYear": 2012,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "The Avengers.jpg"
+  },
+  {
+    "title": "Iron Man 3",
+    "director": "Shane Black",
+    "releaseYear": 2013,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Iron Man 3.jpg"
+  },
+  {
+    "title": "Thor: The Dark World",
+    "director": "Alan Taylor",
+    "releaseYear": 2013,
+    "genre": "Action/Fantasy",
+    "posterImage": "Thor The Dark World.jpg"
+  },
+  {
+    "title": "Captain America: The Winter Soldier",
+    "director": "Anthony Russo, Joe Russo",
+    "releaseYear": 2014,
+    "genre": "Action/Thriller",
+    "posterImage": "Captain America The Winter Soldier.jpg"
+  },
+  {
+    "title": "Guardians of the Galaxy",
+    "director": "James Gunn",
+    "releaseYear": 2014,
+    "genre": "Action/Comedy",
+    "posterImage": "Guardians of the Galaxy.jpg"
+  },
+  {
+    "title": "Avengers: Age of Ultron",
+    "director": "Joss Whedon",
+    "releaseYear": 2015,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Avengers Age of Ultron.jpg"
+  },
+  {
+    "title": "Ant-Man",
+    "director": "Peyton Reed",
+    "releaseYear": 2015,
+    "genre": "Action/Comedy",
+    "posterImage": "Ant-Man.jpg"
+  },
+  {
+    "title": "Captain America: Civil War",
+    "director": "Anthony Russo, Joe Russo",
+    "releaseYear": 2016,
+    "genre": "Action/Adventure",
+    "posterImage": "Captain America Civil War.jpg"
+  },
+  {
+    "title": "Doctor Strange",
+    "director": "Scott Derrickson",
+    "releaseYear": 2016,
+    "genre": "Action/Fantasy",
+    "posterImage": "Doctor Strange.jpg"
+  },
+  {
+    "title": "Guardians of the Galaxy Vol. 2",
+    "director": "James Gunn",
+    "releaseYear": 2017,
+    "genre": "Action/Comedy",
+    "posterImage": "Guardians of the Galaxy Vol. 2.jpg"
+  },
+  {
+    "title": "Spider-Man: Homecoming",
+    "director": "Jon Watts",
+    "releaseYear": 2017,
+    "genre": "Action/Adventure",
+    "posterImage": "Spider-Man Homecoming.jpg"
+  },
+  {
+    "title": "Thor: Ragnarok",
+    "director": "Taika Waititi",
+    "releaseYear": 2017,
+    "genre": "Action/Comedy",
+    "posterImage": "Thor Ragnarok.jpg"
+  },
+  {
+    "title": "Black Panther",
+    "director": "Ryan Coogler",
+    "releaseYear": 2018,
+    "genre": "Action/Adventure",
+    "posterImage": "Black Panther.jpg"
+  },
+  {
+    "title": "Avengers: Infinity War",
+    "director": "Anthony Russo, Joe Russo",
+    "releaseYear": 2018,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Avengers Infinity War.jpg"
+  },
+  {
+    "title": "Ant-Man and the Wasp",
+    "director": "Peyton Reed",
+    "releaseYear": 2018,
+    "genre": "Action/Comedy",
+    "posterImage": "Ant-Man and the Wasp.jpg"
+  },
+  {
+    "title": "Captain Marvel",
+    "director": "Anna Boden, Ryan Fleck",
+    "releaseYear": 2019,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Captain Marvel.jpg"
+  },
+  {
+    "title": "Avengers: Endgame",
+    "director": "Anthony Russo, Joe Russo",
+    "releaseYear": 2019,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Avengers Endgame.jpg"
+  },
+  {
+    "title": "Spider-Man: Far From Home",
+    "director": "Jon Watts",
+    "releaseYear": 2019,
+    "genre": "Action/Adventure",
+    "posterImage": "Spider-Man Far From Home.jpg"
+  },
+  {
+    "title": "Black Widow",
+    "director": "Cate Shortland",
+    "releaseYear": 2021,
+    "genre": "Action/Adventure",
+    "posterImage": "Black Widow.jpg"
+  },
+  {
+    "title": "Shang-Chi and the Legend of the Ten Rings",
+    "director": "Destin Daniel Cretton",
+    "releaseYear": 2021,
+    "genre": "Action/Fantasy",
+    "posterImage": "Shang-Chi and the Legend of the Ten Rings.jpg"
+  },
+  {
+    "title": "Eternals",
+    "director": "Chlo\u00e9 Zhao",
+    "releaseYear": 2021,
+    "genre": "Action/Fantasy",
+    "posterImage": "Eternals.jpg"
+  },
+  {
+    "title": "Spider-Man: No Way Home",
+    "director": "Jon Watts",
+    "releaseYear": 2021,
+    "genre": "Action/Adventure",
+    "posterImage": "Spider-Man No Way Home.jpg"
+  },
+  {
+    "title": "Doctor Strange in the Multiverse of Madness",
+    "director": "Sam Raimi",
+    "releaseYear": 2022,
+    "genre": "Action/Fantasy",
+    "posterImage": "Doctor Strange in the Multiverse of Madness.jpg"
+  },
+  {
+    "title": "Thor: Love and Thunder",
+    "director": "Taika Waititi",
+    "releaseYear": 2022,
+    "genre": "Action/Comedy",
+    "posterImage": "Thor Love and Thunder.jpg"
+  },
+  {
+    "title": "Black Panther: Wakanda Forever",
+    "director": "Ryan Coogler",
+    "releaseYear": 2022,
+    "genre": "Action/Drama",
+    "posterImage": "Black Panther Wakanda Forever.jpg"
+  },
+  {
+    "title": "Ant-Man and the Wasp: Quantumania",
+    "director": "Peyton Reed",
+    "releaseYear": 2023,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Ant-Man and the Wasp Quantumania.jpg"
+  },
+  {
+    "title": "Guardians of the Galaxy Vol. 3",
+    "director": "James Gunn",
+    "releaseYear": 2023,
+    "genre": "Action/Comedy",
+    "posterImage": "Guardians of the Galaxy Vol. 3.jpg"
+  },
+  {
+    "title": "The Marvels",
+    "director": "Nia DaCosta",
+    "releaseYear": 2023,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "The Marvels.jpg"
+  },
+  {
+    "title": "Deadpool & Wolverine",
+    "director": "Shawn Levy",
+    "releaseYear": 2024,
+    "genre": "Action/Comedy",
+    "posterImage": "Deadpool and Wolverine.jpg"
+  },
+  {
+    "title": "Captain America: Brave New World",
+    "director": "Julius Onah",
+    "releaseYear": 2025,
+    "genre": "Action/Adventure",
+    "posterImage": "Captain America Brave New World.jpg"
+  },
+  {
+    "title": "Thunderbolts",
+    "director": "Jake Schreier",
+    "releaseYear": 2025,
+    "genre": "Action/Adventure",
+    "posterImage": "Thunderbolts.jpg"
+  },
+  {
+    "title": "Blade",
+    "director": "Yann Demange",
+    "releaseYear": 2025,
+    "genre": "Action/Horror",
+    "posterImage": "Blade.jpg"
+  },
+  {
+    "title": "Fantastic Four",
+    "director": "Matt Shakman",
+    "releaseYear": 2025,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Fantastic Four.jpg"
+  },
+  {
+    "title": "Avengers: Doomsday",
+    "director": "Russo Brothers",
+    "releaseYear": 2026,
+    "genre": "Action/Sci-Fi",
+    "posterImage": "Avengers Doomsday.jpg"
+  }
+]
