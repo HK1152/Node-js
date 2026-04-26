@@ -89,4 +89,33 @@ router.get('/logout', (req, res) => {
     res.redirect("/owners/login");
 });
 
+const upload = require('../config/multer-config.js');
+
+router.get('/manage', isOwnerLoggedin, async (req, res) => {
+    let success = req.flash('success');
+    let error = req.flash('error');
+    let owner = await ownerModel.findById(req.owner._id);
+    res.render('admin-manage', { success, error, owner });
+});
+
+router.post('/manage', isOwnerLoggedin, upload.single('picture'), async (req, res) => {
+    try {
+        let { fullname, gstin } = req.body;
+        let owner = await ownerModel.findById(req.owner._id);
+        
+        if (fullname) owner.fullname = fullname;
+        if (gstin) owner.gstin = gstin;
+        if (req.file) {
+            owner.picture = req.file.buffer;
+        }
+
+        await owner.save();
+        req.flash('success', 'Profile updated successfully');
+        res.redirect('/owners/manage');
+    } catch (err) {
+        req.flash('error', err.message);
+        res.redirect('/owners/manage');
+    }
+});
+
 module.exports = router;
